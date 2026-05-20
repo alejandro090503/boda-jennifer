@@ -323,36 +323,19 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .cd-lbl{font-family:var(--sans);font-size:11px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;padding-left:.45em;font-weight:600}
 
 /* ============ ITINERARIO ============ */
-.itinerary{position:relative}
-.itinerary-sub{font-family:var(--italiana);font-size:17px;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft);padding-left:0;margin-bottom:80px;display:block;text-align:center;width:100%}
-.itin-wrap{position:relative;padding:0 clamp(20px,5vw,60px);max-width:900px;margin:0 auto}
-.itin-track{position:absolute;left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%);background:var(--hair-gold);overflow:hidden;}
-.itin-track-fill{position:absolute;inset:0;background:linear-gradient(to bottom,var(--gold-deep),var(--gold));transform:scaleY(0);transform-origin:top;}
-.itin-track-glow{position:absolute;inset:0;background:linear-gradient(to bottom,var(--gold-soft),transparent);transform:scaleY(0);transform-origin:top;filter:blur(6px);opacity:.8;}
-.itin-events{list-style:none;display:flex;flex-direction:column;gap:56px;position:relative;z-index:2;}
-.itin-event{display:grid;grid-template-columns:1fr 14px 1fr;align-items:center;gap:28px;}
-.itin-event--right .itin-card{grid-column:3;text-align:left}
-.itin-event--right .itin-spacer{grid-column:1}
-.itin-event--left .itin-card{grid-column:1;text-align:right}
-.itin-event--left .itin-spacer{grid-column:3}
-.itin-marker{grid-column:2;width:10px;height:10px;border-radius:50%;margin:0 auto;background:color-mix(in srgb,var(--accent) 20%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);position:relative;z-index:3;display:block;opacity:.4;transition:opacity .45s ease,background .45s ease,border-color .45s ease;}
-.itin-event.is-active .itin-marker{opacity:1;background:var(--gold-deep);border-color:var(--gold-deep);}
-.itin-card{padding:22px 26px;background:color-mix(in srgb,var(--surface) 72%,transparent);border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:12px;transition:border-color .5s ease,background .5s ease,box-shadow .5s ease,transform .5s ease;}
-.itin-time{font-family:var(--display);font-style:italic;font-size:clamp(22px,3.2vw,30px);color:var(--accent);letter-spacing:.02em;margin-bottom:4px;transition:color .5s ease;font-weight:500}
-.itin-name{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.24em;color:var(--ink-soft);font-weight:600;}
-.itin-desc{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1.55;font-weight:500}
-.itin-event.is-active .itin-card{border-color:color-mix(in srgb,var(--gold) 55%,transparent);background:color-mix(in srgb,var(--surface) 88%,transparent);box-shadow:0 14px 44px -18px color-mix(in srgb,var(--accent) 55%,transparent);}
-.itin-event.is-active .itin-time{color:var(--gold-deep)}
-@media(max-width:680px){
-  .itin-wrap{padding-left:48px;padding-right:14px}
-  .itin-track{left:24px;margin-left:0}
-  .itin-events{gap:46px}
-  .itin-event{grid-template-columns:14px 1fr;gap:22px}
-  .itin-marker{grid-column:1}
-  .itin-card{grid-column:2 !important;text-align:left !important}
-  .itin-spacer{display:none}
-  .itin-time{font-size:22px}
-}
+#siti{overflow:visible;padding-left:24px;padding-right:24px;}
+.itinerary-sub{font-family:var(--italiana);font-size:17px;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft);padding-left:0;margin-bottom:48px;display:block;text-align:center;width:100%}
+.itv3{position:relative;display:flex;flex-direction:column;align-items:center;padding:10px 0 10px;}
+.itv3-track{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:1px;z-index:0;background:linear-gradient(to bottom,transparent 0%,rgba(58,111,165,0.35) 10%,rgba(26,61,107,0.25) 45%,rgba(58,111,165,0.30) 80%,transparent 100%);}
+.itv3-glow{position:absolute;left:50%;transform:translateX(-50%);top:0;width:5px;height:110px;background:linear-gradient(to bottom,transparent,rgba(58,111,165,0.55) 20%,rgba(58,111,165,0.90) 50%,rgba(58,111,165,0.55) 80%,transparent);filter:blur(3px);border-radius:6px;z-index:1;pointer-events:none;}
+.itv3-item{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 16px 4px;width:100%;}
+.itv3-gem{width:9px;height:9px;background:linear-gradient(135deg,#8ab8e8 30%,#1a3d6b);transform:rotate(45deg);border-radius:2px;box-shadow:0 0 0 4px rgba(58,111,165,0.12),0 0 18px rgba(58,111,165,0.45);margin-bottom:18px;flex-shrink:0;}
+.itv3-gem-navy{background:linear-gradient(135deg,#4778b0 30%,#1a3d6b);box-shadow:0 0 0 4px rgba(26,61,107,0.14),0 0 18px rgba(26,61,107,0.45);}
+.itv3-gem-mid{background:linear-gradient(135deg,#5a8dbf 30%,#2d5a8e);box-shadow:0 0 0 4px rgba(58,111,165,0.10),0 0 18px rgba(58,111,165,0.38);}
+.itv3-time{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;letter-spacing:8px;color:var(--ink);line-height:1;margin-bottom:6px;text-indent:8px;}
+.itv3-ev{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(26,42,64,0.55);letter-spacing:3px;text-transform:uppercase;line-height:1.5;text-indent:3px;}
+.itv3-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--gold-deep);opacity:.75;letter-spacing:1px;margin-top:4px;line-height:1.4;}
+.itv3-item:last-child{padding-bottom:10px;}
 
 /* ============ DRESS ============ */
 .dress{text-align:center}
@@ -722,100 +705,72 @@ footer{background:var(--accent-deep);padding:min(16vh,140px) 0}
   <div class="seam" style="--from:var(--bg);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- ITINERARIO -->
-  <section class="section-paper itinerary">
+  <section class="section-paper" id="siti">
     <span class="mono-wm" aria-hidden="true">J &amp; M</span>
     <div class="container">
       <div class="eyebrow">Itinerario</div>
       <h2>El <em>recorrido</em> del día</h2>
       <span class="itinerary-sub">sábado 15 de agosto · 2026</span>
-      <div class="itin-wrap" id="itin">
-        <div class="itin-track" aria-hidden="true">
-          <div class="itin-track-glow" id="itin-glow"></div>
-          <div class="itin-track-fill" id="itin-fill"></div>
+      <div class="itv3">
+        <div class="itv3-track"></div>
+        <div class="itv3-glow" id="itvGlow"></div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem"></div>
+          <div class="itv3-time">12:00</div>
+          <div class="itv3-ev">Cóctel de bienvenida</div>
         </div>
-        <ul class="itin-events">
-          <li class="itin-event itin-event--right">
-            <div class="itin-card">
-              <div class="itin-time">12:00 pm</div>
-              <div class="itin-name">Cóctel de bienvenida</div>
-              <div class="itin-desc">Bienvenida de los invitados con bebidas y aperitivos.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--left">
-            <div class="itin-card">
-              <div class="itin-time">1:00 pm</div>
-              <div class="itin-name">Ceremonia Civil</div>
-              <div class="itin-desc">Unión legal de Jennifer &amp; Marcel.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--right">
-            <div class="itin-card">
-              <div class="itin-time">1:40 pm</div>
-              <div class="itin-name">Presentación de los novios</div>
-              <div class="itin-desc">¡El gran momento — recibamos a los recién casados!</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--left">
-            <div class="itin-card">
-              <div class="itin-time">2:20 pm</div>
-              <div class="itin-name">Baile de los novios</div>
-              <div class="itin-desc">La primera danza de Jennifer &amp; Marcel como esposos.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--right">
-            <div class="itin-card">
-              <div class="itin-time">2:50 pm</div>
-              <div class="itin-name">Almuerzo buffet</div>
-              <div class="itin-desc">Disfruta del almuerzo mientras celebramos juntos.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--left">
-            <div class="itin-card">
-              <div class="itin-time">3:00 pm</div>
-              <div class="itin-name">Juegos con los novios</div>
-              <div class="itin-desc">Diversión y momentos únicos con Jennifer &amp; Marcel.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--right">
-            <div class="itin-card">
-              <div class="itin-time">4:00 pm</div>
-              <div class="itin-name">¡Fiesta!</div>
-              <div class="itin-desc">El baile no para — que empiece la celebración.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--left">
-            <div class="itin-card">
-              <div class="itin-time">8:00 pm</div>
-              <div class="itin-name">Cena buffet</div>
-              <div class="itin-desc">Segunda ronda gastronómica para recargar energía.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-          <li class="itin-event itin-event--right">
-            <div class="itin-card">
-              <div class="itin-time">10:00 pm</div>
-              <div class="itin-name">Último baile</div>
-              <div class="itin-desc">El cierre perfecto de una noche que siempre recordaremos.</div>
-            </div>
-            <span class="itin-marker" aria-hidden="true"></span>
-            <div class="itin-spacer" aria-hidden="true"></div>
-          </li>
-        </ul>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-navy"></div>
+          <div class="itv3-time">1:00</div>
+          <div class="itv3-ev">Ceremonia Civil</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-mid"></div>
+          <div class="itv3-time">1:40</div>
+          <div class="itv3-ev">Presentación de los novios</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-navy"></div>
+          <div class="itv3-time">2:20</div>
+          <div class="itv3-ev">Baile de los novios</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem"></div>
+          <div class="itv3-time">2:50</div>
+          <div class="itv3-ev">Almuerzo buffet</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-mid"></div>
+          <div class="itv3-time">3:00</div>
+          <div class="itv3-ev">Juegos con los novios</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-navy"></div>
+          <div class="itv3-time">4:00</div>
+          <div class="itv3-ev">¡Fiesta!</div>
+          <div class="itv3-sub">El baile no para</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem"></div>
+          <div class="itv3-time">8:00</div>
+          <div class="itv3-ev">Cena buffet</div>
+          <div class="itv3-sub">Segunda ronda gastronómica</div>
+        </div>
+
+        <div class="itv3-item rv">
+          <div class="itv3-gem itv3-gem-mid"></div>
+          <div class="itv3-time">10:00</div>
+          <div class="itv3-ev">Último baile</div>
+          <div class="itv3-sub">Hasta la 1:00 a.m.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1227,34 +1182,38 @@ function tick(){
 tick();setInterval(tick,1000);
 gsap.fromTo('.cd-block',{opacity:0,y:40,rotateX:-30},{opacity:1,y:0,rotateX:0,duration:1.1,stagger:.12,ease:'power4.out',scrollTrigger:{trigger:'.countdown-grid',start:'top 82%'}});
 
-// ------ ITINERARIO ------
-(()=>{
-  const wrap=document.getElementById('itin');
-  const fill=document.getElementById('itin-fill');
-  const glow=document.getElementById('itin-glow');
-  if(!wrap||!fill) return;
-  const events=Array.from(wrap.querySelectorAll('.itin-event'));
-  const nodes=events.map(e=>e.querySelector('.itin-marker'));
-  gsap.fromTo(events,{opacity:0,y:36},{opacity:1,y:0,duration:.9,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:wrap,start:'top 78%'}});
-  let nodePositions=[];
-  const measure=()=>{
-    const wrapRect=wrap.getBoundingClientRect();
-    const h=wrap.offsetHeight;
-    nodePositions=nodes.map(n=>{const r=n.getBoundingClientRect();return((r.top-wrapRect.top)+r.height/2)/h;});
-  };
-  measure();
-  window.addEventListener('resize',()=>{measure();ScrollTrigger.refresh();});
-  ScrollTrigger.create({trigger:wrap,start:'top 72%',end:'bottom 55%',scrub:.6,
-    onUpdate:self=>{
-      const p=self.progress;
-      fill.style.transform='scaleY('+p.toFixed(4)+')';
-      if(glow) glow.style.transform='scaleY('+p.toFixed(4)+')';
-      events.forEach((ev,i)=>{
-        const t=nodePositions[i]||0;
-        if(p>=t-.02) ev.classList.add('is-active');
-        else ev.classList.remove('is-active');
-      });
+// ------ ITINERARIO (itv3) ------
+(function initItinerary(){
+  var glow=document.getElementById('itvGlow');
+  var section=document.getElementById('siti');
+  var items=document.querySelectorAll('.itv3-item');
+  if(!glow||!section) return;
+  ScrollTrigger.create({
+    trigger:section,start:'top 58%',end:'bottom 42%',scrub:1.8,
+    onUpdate:function(self){
+      var track=section.querySelector('.itv3-track');
+      if(!track) return;
+      var h=track.offsetHeight-55;
+      glow.style.top=(self.progress*h)+'px';
     }
+  });
+  items.forEach(function(item){
+    var gem=item.querySelector('.itv3-gem');
+    var isNavy=gem.classList.contains('itv3-gem-navy');
+    var gc=isNavy?'71,120,176':'138,184,232';
+    gsap.fromTo(gem,{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:'back.out(2.8)',
+      scrollTrigger:{trigger:item,start:'top 86%',once:true},
+      onComplete:function(){
+        gsap.timeline()
+          .to(gem,{scale:1.4,filter:'drop-shadow(0 0 20px rgba('+gc+',1))',duration:0.3,ease:'power2.out'})
+          .to(gem,{scale:1,filter:'drop-shadow(0 0 5px rgba('+gc+',0.35))',duration:0.28,ease:'power2.in'})
+          .to(gem,{scale:1.2,filter:'drop-shadow(0 0 14px rgba('+gc+',0.8))',duration:0.22,ease:'power2.out'})
+          .to(gem,{scale:1,filter:'drop-shadow(0 0 4px rgba('+gc+',0.25))',duration:0.32,ease:'power2.in'});
+      }
+    });
+    var els=[item.querySelector('.itv3-time'),item.querySelector('.itv3-ev'),item.querySelector('.itv3-sub')].filter(Boolean);
+    gsap.fromTo(els,{y:14,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power2.out',stagger:0.08,
+      scrollTrigger:{trigger:item,start:'top 86%',once:true}});
   });
 })();
 
