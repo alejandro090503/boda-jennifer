@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Jennifer & Marcel · 15 Agosto 2026 · Biberach</title>
-<meta name="description" content="Jennifer & Marcel · Nuestra boda · Sábado 15 de agosto de 2026 · Biberach, Alemania">
+<title>Jennifer & Marcel · 15. August 2026 · Biberach</title>
+<meta name="description" content="Jennifer & Marcel · Unsere Hochzeit · Samstag, 15. August 2026 · Biberach, Deutschland">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jennifer & Marcel · 15 Agosto 2026">
-<meta property="og:description" content="Nuestra boda · Sábado 15 de agosto de 2026 · Biberach, Alemania">
+<meta property="og:title" content="Jennifer & Marcel · 15. August 2026">
+<meta property="og:description" content="Unsere Hochzeit · Samstag, 15. August 2026 · Biberach, Deutschland">
 <meta property="og:image" content="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193379976-5.jpeg">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jennifer & Marcel · 15 Agosto 2026">
+<meta name="twitter:title" content="Jennifer & Marcel · 15. August 2026">
 <meta name="twitter:image" content="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193379976-5.jpeg">
 
 <link rel="preload" as="image" href="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193536645-1.jpeg" fetchpriority="high">
@@ -399,8 +399,8 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .gallery{padding:60px 0 80px;text-align:center;overflow:hidden;}
 .gallery-head{text-align:center;margin-bottom:50px;padding:0 26px;}
 .gallery h2{font-size:clamp(36px,5vw,58px);margin-bottom:20px;}
-.gallery-sub{font-family:var(--script);color:var(--gold-soft);font-size:32px;line-height:1}
-.gallery .eyebrow{color:var(--accent-soft);}
+.gallery-sub{font-family:var(--script);color:var(--gold-deep);font-size:32px;line-height:1;text-shadow:0 1px 12px rgba(201,160,68,.25)}
+.gallery .eyebrow{color:var(--gold-deep);}
 .wheel-stage{position:relative;width:100%;height:min(960px,108vw);max-width:1080px;margin:0 auto;padding:clamp(20px,4vw,60px);display:flex;align-items:center;justify-content:center;}
 .wheel{position:relative;width:min(840px,92vw);height:min(840px,92vw);border-radius:50%;}
 .wheel-spoke{position:absolute;inset:-2px;border-radius:50%;border:1px solid rgba(186,222,255,0.55);}
@@ -569,7 +569,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .vinyl-tonearm-pivot{position:absolute;top:0;right:2px;width:7px;height:7px;background:radial-gradient(circle,#c6e2ff,#badeff);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.3);}
 
 /* ============ FOOTER ============ */
-footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);padding:min(16vh,140px) 0;border-top:1px solid rgba(201,160,68,.18);}
+footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#feeeff 100%);padding:min(16vh,140px) 0;border-top:1px solid rgba(201,160,68,.18);}
 .footer-inner{text-align:center}
 .footer-ornament{display:block;margin:0 auto 40px;width:min(280px,70vw);height:auto;opacity:.6}
 .footer-names{font-family:var(--display);font-style:italic;font-size:clamp(42px,7vw,72px);color:var(--ink);line-height:1.1;margin-bottom:20px;font-weight:500}
@@ -596,15 +596,15 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
 <body>
 
 <!-- ENVELOPE OPENING -->
-<div id="envelope-screen" role="button" aria-label="Toca para abrir la invitación" tabindex="0">
+<div id="envelope-screen" role="button" aria-label="Tippe, um die Einladung zu öffnen" tabindex="0">
   <img id="env-image" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193379976-5.jpeg" alt="">
-  <div id="env-hint">Toca para abrir</div>
+  <div id="env-hint">Tippe zum Öffnen</div>
 </div>
 <div id="env-flash" aria-hidden="true"></div>
 <audio id="music" preload="auto" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-<button class="vinyl-btn" id="music-btn" type="button" aria-label="Reproducir música de la invitación">
+<button class="vinyl-btn" id="music-btn" type="button" aria-label="Einladungsmusik abspielen">
   <div class="vinyl-tonearm">
     <div class="vinyl-tonearm-pivot"></div>
     <div class="vinyl-tonearm-line"></div>
@@ -646,18 +646,18 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
           <path d="M75 20 L95 20"/><path d="M105 20 L125 20"/>
         </g>
       </svg>
-      <div class="hero-eyebrow" data-anim="hero-eyebrow">Save the date</div>
+      <div class="hero-eyebrow" data-anim="hero-eyebrow">Save the Date</div>
       <h1 class="hero-name">
         <span class="hero-name-p" data-split="Jennifer"></span>
         <span class="hero-and">&amp;</span>
         <span class="hero-name-l" data-split="Marcel"></span>
       </h1>
       <div class="hero-date" data-anim="hero-date">
-        <span>15</span><span class="sep">·</span><span>Agosto</span><span class="sep">·</span><span>2026</span>
+        <span>15</span><span class="sep">·</span><span>August</span><span class="sep">·</span><span>2026</span>
       </div>
-      <div class="hero-place" data-anim="hero-place">Biberach · Alemania</div>
+      <div class="hero-place" data-anim="hero-place">Biberach · Deutschland</div>
     </div>
-    <div class="hero-scroll">Descubre</div>
+    <div class="hero-scroll">Entdecken</div>
   </section>
 
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
@@ -677,8 +677,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
           </g>
         </svg>
         <span class="verse-quote">&ldquo;</span>
-        <p class="verse-text">Y si alguno prevaleciere contra uno, dos le resistirán; y cordón de tres dobleces no se rompe pronto.</p>
-        <span class="verse-ref">Eclesiastés 4:12</span>
+        <p class="verse-text">Und wenn jemand den einen auch überwältigen kann, so werden ihm doch zwei widerstehen; eine dreifache Schnur reißt nicht so bald.</p>
+        <span class="verse-ref">Prediger 4:12</span>
         <div class="verse-sig">J &amp; M</div>
       </div>
     </div>
@@ -689,16 +689,16 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <!-- FECHA HERO -->
   <section class="date-hero">
     <div class="container">
-      <div class="date-eyebrow" data-anim="date-eb">Reserva la fecha</div>
-      <h2 class="date-h">Nuestro <em>gran</em> día</h2>
+      <div class="date-eyebrow" data-anim="date-eb">Merkt euch den Termin</div>
+      <h2 class="date-h">Unser <em>großer</em> Tag</h2>
       <div class="date-numbers">
         <div class="date-block">
           <div class="date-num" data-count-to="15">0</div>
-          <div class="date-lbl">Agosto</div>
+          <div class="date-lbl">August</div>
         </div>
         <div class="date-block">
           <div class="date-num" data-count-to="2026">0</div>
-          <div class="date-lbl">Sábado</div>
+          <div class="date-lbl">Samstag</div>
         </div>
       </div>
       <div class="date-roman">XV · VIII · MMXXVI</div>
@@ -711,15 +711,15 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <section class="section-surface familia">
     <span class="mono-wm" aria-hidden="true">J &amp; M</span>
     <div class="container">
-      <div class="eyebrow">Con el amor de</div>
-      <h2>Nuestras <em>familias</em></h2>
+      <div class="eyebrow">Mit der Liebe von</div>
+      <h2>Unsere <em>Familien</em></h2>
       <div class="familia-grid">
         <div class="familia-card" data-tilt>
-          <div class="familia-role">Padres del novio</div>
+          <div class="familia-role">Eltern des Bräutigams</div>
           <div class="familia-names">Kerstin Böschek<br>&amp; Manfred Förderer</div>
         </div>
         <div class="familia-card" data-tilt>
-          <div class="familia-role">Padres de la novia</div>
+          <div class="familia-role">Eltern der Braut</div>
           <div class="familia-names">Elizabeth Joo<br>&amp; Alberto Trujillo</div>
         </div>
       </div>
@@ -731,8 +731,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <!-- PADRINOS / TESTIGOS -->
   <section class="section-paper padrinos">
     <div class="container">
-      <div class="eyebrow">Quienes nos acompañan</div>
-      <h2>Testigos <em>&amp;</em> Cortejo</h2>
+      <div class="eyebrow">Die uns begleiten</div>
+      <h2>Trauzeugen <em>&amp;</em> Gefolge</h2>
       <div class="padrinos-grid">
         <!-- Testigos -->
         <div class="padrino-card">
@@ -744,7 +744,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <div class="padrino-tipo">Testigos</div>
+          <div class="padrino-tipo">Trauzeugen</div>
           <div class="padrino-names">Carlos Sánchez<br>&amp; Mario Förderer</div>
         </div>
         <!-- Dama de honor -->
@@ -758,7 +758,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
               <path d="M9 22l3-4 3 4"/>
             </svg>
           </div>
-          <div class="padrino-tipo">Dama de honor</div>
+          <div class="padrino-tipo">Brautjungfer</div>
           <div class="padrino-names">Sophia Reinhold</div>
         </div>
       </div>
@@ -771,9 +771,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <section class="section-surface locs">
     <div class="container">
       <div style="text-align:center">
-        <div class="eyebrow">Acompáñanos</div>
-        <h2>Ceremonia <em>&amp;</em> Recepción</h2>
-        <div class="locs-sub">Biberach · Alemania</div>
+        <div class="eyebrow">Seid dabei</div>
+        <h2>Zeremonie <em>&amp;</em> Empfang</h2>
+        <div class="locs-sub">Biberach · Deutschland</div>
       </div>
       <div style="max-width:860px;margin:0 auto">
         <article class="loc-card loc-card--single" data-tilt>
@@ -797,12 +797,12 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
 
           <div class="loc-schedule">
             <div class="loc-sched-item">
-              <div class="loc-sched-label">Cóctel de bienvenida</div>
-              <div class="loc-sched-time">12:00 pm</div>
+              <div class="loc-sched-label">Willkommenscocktail</div>
+              <div class="loc-sched-time">12:00 Uhr</div>
             </div>
             <div class="loc-sched-sep" aria-hidden="true"></div>
             <div class="loc-sched-item">
-              <div class="loc-sched-label">Ceremonia civil</div>
+              <div class="loc-sched-label">Standesamtliche Trauung</div>
               <div class="loc-sched-time">1:00 pm</div>
             </div>
           </div>
@@ -815,7 +815,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
               title="Theodor-Heuss-Straße 28, Biberach an der Riß"></iframe>
           </div>
 
-          <a class="loc-btn" href="https://maps.app.goo.gl/ZBjSQJLRDnpUnCcv5" target="_blank" rel="noopener" style="margin-top:32px">¿Cómo llegar?</a>
+          <a class="loc-btn" href="https://maps.app.goo.gl/ZBjSQJLRDnpUnCcv5" target="_blank" rel="noopener" style="margin-top:32px">Wegbeschreibung</a>
         </article>
       </div>
     </div>
@@ -826,14 +826,14 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <!-- COUNTDOWN -->
   <section class="section-bg countdown">
     <div class="container">
-      <div class="eyebrow">Cuenta regresiva</div>
-      <h2>Contamos <em>los</em> días</h2>
-      <div class="countdown-sub">hasta el gran momento</div>
+      <div class="eyebrow">Countdown</div>
+      <h2>Wir zählen <em>die</em> Tage</h2>
+      <div class="countdown-sub">bis zum großen Moment</div>
       <div class="countdown-grid" id="cd">
-        <div class="cd-block"><div class="cd-num" id="cd-d">000</div><div class="cd-lbl">Días</div></div>
-        <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
-        <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Minutos</div></div>
-        <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Segundos</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-d">000</div><div class="cd-lbl">Tage</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Stunden</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Minuten</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Sekunden</div></div>
       </div>
     </div>
   </section>
@@ -846,9 +846,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
     <div class="itv3-orb" style="width:260px;height:260px;top:45%;right:-60px;background:radial-gradient(circle,rgba(254,238,255,.12),transparent 70%);"></div>
     <div class="itv3-orb" style="width:200px;height:200px;bottom:10%;left:10%;background:radial-gradient(circle,rgba(201,160,68,.07),transparent 70%);"></div>
     <div class="container">
-      <div class="eyebrow">Itinerario</div>
-      <h2>El <em>recorrido</em> del día</h2>
-      <span class="itinerary-sub">sábado 15 de agosto · 2026</span>
+      <div class="eyebrow">Ablauf</div>
+      <h2>Der <em>Ablauf</em> des Tages</h2>
+      <span class="itinerary-sub">Samstag, 15. August · 2026</span>
       <div class="itv3">
         <div class="itv3-track"></div>
         <div class="itv3-glow" id="itvGlow"></div>
@@ -857,74 +857,74 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
           <div class="itv3-gem"></div>
           <div class="itv3-card">
             <div class="itv3-time">12:00</div>
-            <div class="itv3-ev">Cóctel de bienvenida</div>
+            <div class="itv3-ev">Willkommenscocktail</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-lavender"></div>
           <div class="itv3-card">
-            <div class="itv3-time">1:00</div>
-            <div class="itv3-ev">Ceremonia Civil</div>
+            <div class="itv3-time">13:00</div>
+            <div class="itv3-ev">Standesamtliche Trauung</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-mid"></div>
           <div class="itv3-card">
-            <div class="itv3-time">1:40</div>
-            <div class="itv3-ev">Presentación de los novios</div>
+            <div class="itv3-time">13:40</div>
+            <div class="itv3-ev">Vorstellung des Brautpaares</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-navy"></div>
           <div class="itv3-card">
-            <div class="itv3-time">2:20</div>
-            <div class="itv3-ev">Baile de los novios</div>
+            <div class="itv3-time">14:20</div>
+            <div class="itv3-ev">Hochzeitstanz</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem"></div>
           <div class="itv3-card">
-            <div class="itv3-time">2:50</div>
-            <div class="itv3-ev">Almuerzo buffet</div>
+            <div class="itv3-time">14:50</div>
+            <div class="itv3-ev">Mittagsbuffet</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-mid"></div>
           <div class="itv3-card">
-            <div class="itv3-time">3:00</div>
-            <div class="itv3-ev">Juegos con los novios</div>
+            <div class="itv3-time">15:00</div>
+            <div class="itv3-ev">Spiele mit dem Brautpaar</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-lavender"></div>
           <div class="itv3-card">
-            <div class="itv3-time">4:00</div>
-            <div class="itv3-ev">¡Fiesta!</div>
-            <div class="itv3-sub">El baile no para</div>
+            <div class="itv3-time">16:00</div>
+            <div class="itv3-ev">Party!</div>
+            <div class="itv3-sub">Die Tanzfläche hört nicht auf</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem"></div>
           <div class="itv3-card">
-            <div class="itv3-time">8:00</div>
-            <div class="itv3-ev">Cena buffet</div>
-            <div class="itv3-sub">Segunda ronda gastronómica</div>
+            <div class="itv3-time">20:00</div>
+            <div class="itv3-ev">Abendbuffet</div>
+            <div class="itv3-sub">Zweite gastronomische Runde</div>
           </div>
         </div>
 
         <div class="itv3-item rv">
           <div class="itv3-gem itv3-gem-lavender"></div>
           <div class="itv3-card">
-            <div class="itv3-time">10:00</div>
-            <div class="itv3-ev">Último baile</div>
-            <div class="itv3-sub">Hasta la 1:00 a.m.</div>
+            <div class="itv3-time">22:00</div>
+            <div class="itv3-ev">Letzter Tanz</div>
+            <div class="itv3-sub">Bis 01:00 Uhr</div>
           </div>
         </div>
       </div>
@@ -936,10 +936,10 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <!-- DRESS CODE -->
   <section class="section-bg dress">
     <div class="container">
-      <div class="eyebrow">Código de vestimenta</div>
-      <h2>Formal</h2>
-      <div class="dress-sub">viste la ocasión</div>
-      <div class="dress-note">Caballero · Dama · Etiqueta elegante</div>
+      <div class="eyebrow">Dresscode</div>
+      <h2>Festlich</h2>
+      <div class="dress-sub">kleidet den Anlass</div>
+      <div class="dress-note">Herren · Damen · Elegante Etikette</div>
 
       <!-- Figuras Caballero & Dama -->
       <div class="dc-figures">
@@ -959,8 +959,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
             <ellipse id="cab-shoe-l" cx="36" cy="197" rx="11" ry="3" fill="#0d2a42"/>
             <ellipse id="cab-shoe-r" cx="64" cy="197" rx="11" ry="3" fill="#0d2a42"/>
           </svg>
-          <div class="dc-fig-name">Caballero</div>
-          <div class="dc-fig-hint">Traje formal<br>Zapato cerrado</div>
+          <div class="dc-fig-name">Herr</div>
+          <div class="dc-fig-hint">Formeller Anzug<br>Geschlossene Schuhe</div>
         </div>
 
         <div class="dc-divider" aria-hidden="true"></div>
@@ -985,22 +985,22 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
             <path d="M26 110 Q18 150 10 198 L4 198 Q12 150 22 108 Z" fill="#FFFFFF" opacity=".08"/>
             <ellipse cx="50" cy="199" rx="48" ry="2" fill="#0A0F26" opacity=".25"/>
           </svg>
-          <div class="dc-fig-name">Dama</div>
-          <div class="dc-fig-hint">Vestido largo o midi<br>Sin rojo, negro ni dorado</div>
+          <div class="dc-fig-name">Dame</div>
+          <div class="dc-fig-hint">Langes oder Midi-Kleid<br>Kein Rot, Schwarz oder Gold</div>
         </div>
       </div>
 
       <!-- Colores a evitar -->
       <div class="dress-avoid">
-        <div class="swatch-group-title">Colores a evitar</div>
+        <div class="swatch-group-title">Zu vermeidende Farben</div>
         <div class="avoid-list">
-          <div class="avoid-item"><span class="avoid-c" style="background:#CC0000"></span>Rojo</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#111111"></span>Negro</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#C8A800"></span>Dorado</div>
+          <div class="avoid-item"><span class="avoid-c" style="background:#CC0000"></span>Rot</div>
+          <div class="avoid-item"><span class="avoid-c" style="background:#111111"></span>Schwarz</div>
+          <div class="avoid-item"><span class="avoid-c" style="background:#C8A800"></span>Gold</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#D2B48C"></span>Beige</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1.5px solid #ccd8e8"></span>Blanco</div>
+          <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1.5px solid #ccd8e8"></span>Weiß</div>
         </div>
-        <div class="avoid-note">El blanco está reservado para la novia</div>
+        <div class="avoid-note">Weiß ist der Braut vorbehalten</div>
       </div>
 
     </div>
@@ -1011,8 +1011,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <!-- GALLERY -->
   <section class="gallery" aria-label="Galería de fotos">
     <div class="gallery-head">
-      <div class="eyebrow rv">Nuestros Momentos</div>
-      <h2>Nuestros <em>recuerdos</em></h2>
+      <div class="eyebrow rv">Unsere Momente</div>
+      <h2>Unsere <em>Erinnerungen</em></h2>
       <div class="gallery-sub rv">Jennifer &amp; Marcel</div>
     </div>
     <div class="wheel-stage">
@@ -1070,26 +1070,26 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
             </g>
           </svg>
 
-          <div class="eyebrow">Confirma tu asistencia</div>
-          <h2 class="rsvp-title">Tu presencia <em>lo es</em> todo</h2>
-          <p class="rsvp-text">Por favor confírmanos si nos acompañarás antes del <strong>4 de agosto de 2026</strong>. Un mensaje es suficiente — queremos saber que estarás ahí.</p>
+          <div class="eyebrow">Bestätigung der Teilnahme</div>
+          <h2 class="rsvp-title">Deine Anwesenheit <em>bedeutet</em> alles</h2>
+          <p class="rsvp-text">Bitte bestätige uns deine Teilnahme bis zum <strong>4. August 2026</strong>. Eine Nachricht genügt — wir freuen uns darauf zu wissen, dass du dabei sein wirst.</p>
 
           <div class="rsvp-divider">
             <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
           </div>
 
           <div class="rsvp-pases-display">
-            <div class="rsvp-pases-label">Número de pases</div>
+            <div class="rsvp-pases-label">Anzahl der Gäste</div>
             <div class="rsvp-pases-num">2</div>
           </div>
 
           <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
-            <span>Confirmar asistencia</span>
+            <span>Teilnahme bestätigen</span>
           </button>
 
           <div class="rsvp-deadline">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-            Fecha límite · 4 Agosto 2026
+            Frist · 4. August 2026
           </div>
         </div>
       </div>
@@ -1108,9 +1108,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
         </g>
       </svg>
       <div class="footer-names">Jennifer <span class="amp">&amp;</span> Marcel</div>
-      <div class="footer-date">15 · Agosto · 2026 · Biberach, Alemania</div>
+      <div class="footer-date">15 · August · 2026 · Biberach, Deutschland</div>
       <div class="footer-credit">
-        <span>Invitación diseñada por &nbsp;</span>
+        <span>Einladung gestaltet von &nbsp;</span>
         <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -1126,9 +1126,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
 </div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Foto vergrößert" aria-hidden="true">
   <img id="lightbox-img" src="" alt="">
-  <button id="lightbox-close" aria-label="Cerrar">&#x2715;</button>
+  <button id="lightbox-close" aria-label="Schließen">&#x2715;</button>
 </div>
 
 <script>
@@ -1162,13 +1162,13 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   btn.addEventListener('click', function(){
     const lista = nombres.map((n,i) => (i+1) + '. ' + (n.trim() || '—')).join('\n');
-    let msg = '¡Hola! Con mucho gusto confirmo mi asistencia a la celebración de Jennifer & Marcel. 🎉\n✅ Asistiré con ' + pases + ' pase(s).\n';
+    let msg = 'Hallo! Ich bestätige hiermit gerne meine Teilnahme an der Feier von Jennifer & Marcel. 🎉\n✅ Ich komme mit ' + pases + ' Person(en).\n';
     if(pases > 1){
-      msg += 'Mis acompañantes:\n' + lista + '\n';
+      msg += 'Meine Begleitung:\n' + lista + '\n';
     } else {
-      msg += 'Nombre: ' + (nombres[0].trim() || '—') + '\n';
+      msg += 'Name: ' + (nombres[0].trim() || '—') + '\n';
     }
-    msg += '¡Nos vemos pronto! 💫';
+    msg += 'Bis bald! 💫';
     window.open('https://wa.me/4915755443889?text=' + encodeURIComponent(msg), '_blank');
   });
 })();
