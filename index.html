@@ -440,6 +440,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .gift-name{font-family:var(--display);font-size:26px;color:var(--accent-deep);margin-bottom:12px;font-weight:500}
 .gift-desc{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:0;font-weight:500}
 
+/* ============ VERSICULO background ============ */
+.section-surface.versiculo{overflow:hidden;}
+.section-surface.versiculo::before{content:"";position:absolute;inset:-2px;background:url('./bg-flores-2.jpeg') center/cover no-repeat;opacity:.28;pointer-events:none;z-index:0;mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);-webkit-mask-composite:destination-in;}
+.section-surface.versiculo > .container{position:relative;z-index:1;}
+
 /* ============ FAMILIA background ============ */
 .section-surface.familia{overflow:hidden;}
 .section-surface.familia::before{content:"";position:absolute;inset:-2px;background:url('./bg-historia.jpeg') center/cover no-repeat;opacity:.32;pointer-events:none;z-index:0;mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);-webkit-mask-composite:destination-in;}
@@ -452,7 +457,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 
 /* ============ DRESS background ============ */
 .section-bg.dress{overflow:hidden;}
-.section-bg.dress::before{content:"";position:absolute;inset:-2px;background:url('./bg-vestimenta.jpeg') center/contain no-repeat;opacity:.65;pointer-events:none;z-index:0;mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);-webkit-mask-composite:destination-in;}
+.section-bg.dress::before{content:"";position:absolute;inset:-2px;background:url('./bg-vestimenta.jpeg') center/cover no-repeat;opacity:.65;pointer-events:none;z-index:0;mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 16%,black 84%,transparent 100%);-webkit-mask-composite:destination-in;}
 .section-bg.dress > .container{position:relative;z-index:1;}
 
 /* ============ RSVP ============ */
@@ -504,6 +509,9 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .rsvp-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,160,68,.3);}
 .rsvp-btn:hover::after{opacity:1;}
 .rsvp-btn > *{position:relative;z-index:1;}
+.rsvp-pases-display{max-width:420px;margin:0 auto 28px;padding:20px 32px;background:rgba(186,222,255,.18);border:1px solid rgba(201,160,68,.28);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.rsvp-pases-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft);}
+.rsvp-pases-num{font-family:var(--display);font-style:italic;font-size:clamp(36px,5vw,52px);color:var(--gold-deep);line-height:1;}
 .rsvp-deadline{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--sans);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);padding-left:.4em;font-weight:600;}
 
 /* ============ MUSIC PLAYER (vinyl flotante) ============ */
@@ -655,7 +663,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- VERSÍCULO -->
-  <section class="section-surface">
+  <section class="section-surface versiculo">
     <div class="container">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
@@ -937,19 +945,19 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
       <div class="dc-figures">
         <div class="dc-fig">
           <svg class="dc-svg" id="svg-cab" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle id="cab-head" cx="50" cy="22" r="13" fill="var(--accent-deep)"/>
-            <path id="cab-hair" d="M37 18 Q40 8 50 8 Q60 8 63 18 Q63 14 60 13 Q55 11 50 12 Q45 11 40 13 Q37 14 37 18 Z" fill="var(--gold-deep)"/>
-            <rect id="cab-neck" x="46" y="34" width="8" height="8" fill="var(--accent-deep)"/>
-            <path id="cab-shirt" d="M30 44 L50 60 L70 44 L70 90 L30 90 Z" fill="#FFFFFF" stroke="var(--accent-deep)" stroke-width="1"/>
-            <path id="cab-body" d="M22 46 Q26 42 36 44 L50 64 L64 44 Q74 42 78 46 L82 140 L18 140 Z" fill="var(--accent-deep)" stroke="var(--accent-deep)" stroke-width="1"/>
-            <path id="cab-tie" d="M36 44 L34 80 L50 64 L66 80 L64 44 L50 60 Z" fill="var(--accent-deep)" stroke="var(--gold)" stroke-width=".8" opacity=".95"/>
-            <path id="cab-tie2" d="M47 62 L46 90 L50 96 L54 90 L53 62 L50 64 Z" fill="var(--gold)"/>
-            <circle cx="50" cy="108" r="1.4" fill="var(--gold)"/>
-            <rect id="cab-belt" x="20" y="138" width="60" height="5" fill="#1A1F2E"/>
-            <rect x="46" y="136" width="8" height="9" fill="var(--gold)"/>
-            <path id="cab-legs" d="M22 144 L28 196 L46 196 L50 168 L54 196 L72 196 L78 144 Z" fill="var(--accent-deep)"/>
-            <ellipse id="cab-shoe-l" cx="36" cy="197" rx="11" ry="3" fill="#0A0F26"/>
-            <ellipse id="cab-shoe-r" cx="64" cy="197" rx="11" ry="3" fill="#0A0F26"/>
+            <circle id="cab-head" cx="50" cy="22" r="13" fill="#7ab8e8"/>
+            <path id="cab-hair" d="M37 18 Q40 8 50 8 Q60 8 63 18 Q63 14 60 13 Q55 11 50 12 Q45 11 40 13 Q37 14 37 18 Z" fill="#2a6898"/>
+            <rect id="cab-neck" x="46" y="34" width="8" height="8" fill="#7ab8e8"/>
+            <path id="cab-shirt" d="M30 44 L50 60 L70 44 L70 90 L30 90 Z" fill="#deeeff" stroke="#5b9fd4" stroke-width="1"/>
+            <path id="cab-body" d="M22 46 Q26 42 36 44 L50 64 L64 44 Q74 42 78 46 L82 140 L18 140 Z" fill="#1a4a6e" stroke="#1a4a6e" stroke-width="1"/>
+            <path id="cab-tie" d="M36 44 L34 80 L50 64 L66 80 L64 44 L50 60 Z" fill="#2a6898" stroke="#96c8f0" stroke-width=".8" opacity=".95"/>
+            <path id="cab-tie2" d="M47 62 L46 90 L50 96 L54 90 L53 62 L50 64 Z" fill="#96c8f0"/>
+            <circle cx="50" cy="108" r="1.4" fill="#badeff"/>
+            <rect id="cab-belt" x="20" y="138" width="60" height="5" fill="#0d2a42"/>
+            <rect x="46" y="136" width="8" height="9" fill="#96c8f0"/>
+            <path id="cab-legs" d="M22 144 L28 196 L46 196 L50 168 L54 196 L72 196 L78 144 Z" fill="#1a4a6e"/>
+            <ellipse id="cab-shoe-l" cx="36" cy="197" rx="11" ry="3" fill="#0d2a42"/>
+            <ellipse id="cab-shoe-r" cx="64" cy="197" rx="11" ry="3" fill="#0d2a42"/>
           </svg>
           <div class="dc-fig-name">Caballero</div>
           <div class="dc-fig-hint">Traje formal<br>Zapato cerrado</div>
@@ -959,12 +967,12 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
 
         <div class="dc-fig">
           <svg class="dc-svg" id="svg-dam" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path id="dam-hair" d="M34 28 Q30 14 50 8 Q70 14 66 28 Q70 44 64 52 Q50 48 36 52 Q30 44 34 28 Z" fill="var(--gold-deep)"/>
-            <circle id="dam-head" cx="50" cy="26" r="13" fill="var(--accent-deep)"/>
-            <path id="dam-hairband" d="M37 22 Q40 14 50 14 Q60 14 63 22 Q58 18 50 19 Q42 18 37 22 Z" fill="var(--gold-deep)"/>
-            <circle cx="37" cy="30" r="1.4" fill="var(--gold)"/>
-            <circle cx="63" cy="30" r="1.4" fill="var(--gold)"/>
-            <rect id="dam-neck" x="46" y="38" width="8" height="6" fill="var(--accent-deep)"/>
+            <path id="dam-hair" d="M34 28 Q30 14 50 8 Q70 14 66 28 Q70 44 64 52 Q50 48 36 52 Q30 44 34 28 Z" fill="#2a6898"/>
+            <circle id="dam-head" cx="50" cy="26" r="13" fill="#7ab8e8"/>
+            <path id="dam-hairband" d="M37 22 Q40 14 50 14 Q60 14 63 22 Q58 18 50 19 Q42 18 37 22 Z" fill="#2a6898"/>
+            <circle cx="37" cy="30" r="1.4" fill="#badeff"/>
+            <circle cx="63" cy="30" r="1.4" fill="#badeff"/>
+            <rect id="dam-neck" x="46" y="38" width="8" height="6" fill="#7ab8e8"/>
             <path id="dam-arm-l" d="M30 48 Q18 64 16 90" stroke="#96c8f0" stroke-width="8" stroke-linecap="round" fill="none"/>
             <path id="dam-arm-r" d="M70 48 Q82 64 84 90" stroke="#96c8f0" stroke-width="8" stroke-linecap="round" fill="none"/>
             <path id="dam-torso" d="M32 46 Q38 42 46 44 L50 60 L54 44 Q62 42 68 46 L72 90 L28 90 Z" fill="#96c8f0" stroke="#96c8f0" stroke-width="1"/>
@@ -1070,8 +1078,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e5f0ff 40%,#edf5ff 100%);pa
             <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
           </div>
 
-          <div class="rsvp-fields" id="rsvp-fields">
-            <!-- Generado dinámicamente por JS según ?pases=N -->
+          <div class="rsvp-pases-display">
+            <div class="rsvp-pases-label">Número de pases</div>
+            <div class="rsvp-pases-num">2</div>
           </div>
 
           <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
