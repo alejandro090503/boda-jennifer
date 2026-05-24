@@ -167,6 +167,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 }
 .hero-eyebrow::before,.hero-eyebrow::after{content:"";display:inline-block;width:28px;height:1px;background:#f5dfa0;vertical-align:middle;margin:0 12px 3px 0;}
 .hero-eyebrow::after{margin:0 0 3px 12px}
+.hero-wir-heiraten{
+  font-family:var(--sans);font-weight:400;
+  font-size:11px;letter-spacing:.7em;text-transform:uppercase;
+  color:rgba(248,245,236,.65);padding-left:.7em;
+  margin:0 0 18px;line-height:1;
+}
 .hero-name{
   font-family:var(--display);font-style:italic;font-weight:500;
   font-size:clamp(58px,11vw,140px);line-height:.9;color:#F8F5EC;
@@ -512,6 +518,30 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .env-title{font-family:var(--script);font-size:30px;color:var(--ink);letter-spacing:.5px;line-height:1.2;}
 .env-desc{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink-soft);line-height:1.75;}
 .env-tap-hint{font-family:var(--sans);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px;transition:opacity .3s;}
+/* ── IBAN Block ── */
+.iban-block{
+  margin:52px auto 0;max-width:380px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(201,160,68,.28);
+  border-radius:16px;
+  padding:32px 28px 28px;
+  text-align:center;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 4px 28px rgba(42,21,53,.07),inset 0 1px 0 rgba(255,255,255,.9);
+}
+.iban-icon{color:var(--gold);margin-bottom:10px;}
+.iban-icon svg{width:28px;height:28px;stroke:currentColor;stroke-width:1.3;fill:none;stroke-linecap:round;}
+.iban-label{font-family:var(--sans);font-size:9px;letter-spacing:.55em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:14px;}
+.iban-number{
+  font-family:var(--italiana);font-size:18px;letter-spacing:.12em;
+  color:var(--ink);background:rgba(201,160,68,.07);
+  border:1px solid rgba(201,160,68,.2);
+  border-radius:8px;padding:10px 16px;
+  margin-bottom:10px;word-break:break-all;
+  cursor:pointer;transition:background .25s;
+}
+.iban-number:hover{background:rgba(201,160,68,.14);}
+.iban-copy-hint{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;}
 .env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 .env-body{animation:env-breathe 3.6s ease-in-out infinite;}
@@ -781,6 +811,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
       </svg>
       <p class="hero-invitation" data-anim="hero-invitation">Einladung zu unserer Hochzeit</p>
       <div class="hero-eyebrow" data-anim="hero-eyebrow">15 · August · 2026</div>
+      <p class="hero-wir-heiraten" data-anim="hero-wh">Wir heiraten</p>
       <h1 class="hero-name">
         <span class="hero-name-p" data-split="Jennifer"></span>
         <span class="hero-and">&amp;</span>
@@ -959,8 +990,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
   <section class="section-bg countdown">
     <div class="container">
       <div class="eyebrow">Countdown</div>
-      <h2>Wir zählen <em>die</em> Tage</h2>
-      <div class="countdown-sub">bis zum großen Moment</div>
+      <h2>Zähle <em>die</em> Tage</h2>
+      <div class="countdown-sub">Für den besonderen Tag unseres Lebens</div>
       <div class="countdown-grid" id="cd">
         <div class="cd-block"><div class="cd-num" id="cd-d">000</div><div class="cd-lbl">Tage</div></div>
         <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Stunden</div></div>
@@ -1141,7 +1172,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
             <ellipse cx="50" cy="199" rx="48" ry="2" fill="#0A0F26" opacity=".25"/>
           </svg>
           <div class="dc-fig-name">Damen</div>
-          <div class="dc-fig-hint">Langes oder Midi-Kleid<br>Kein Rot, Schwarz oder Gold</div>
+          <div class="dc-fig-hint">Langes oder Midi-Kleid<br>Kein Beige, Weiß oder Rot</div>
         </div>
       </div>
 
@@ -1149,11 +1180,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
       <div class="dress-avoid">
         <div class="swatch-group-title">Zu vermeidende Farben</div>
         <div class="avoid-list">
-          <div class="avoid-item"><span class="avoid-c" style="background:#CC0000"></span>Rot</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#111111"></span>Schwarz</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#C8A800"></span>Gold</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#D2B48C"></span>Beige</div>
           <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1.5px solid #ccd8e8"></span>Weiß</div>
+          <div class="avoid-item"><span class="avoid-c" style="background:#CC0000"></span>Rot</div>
         </div>
         <div class="avoid-note">Weiß ist der Braut vorbehalten</div>
       </div>
@@ -1193,7 +1222,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
     <div class="container">
       <div class="eyebrow rv">Geschenke</div>
       <h2 style="margin-bottom:16px;">Briefumschlag <em>Geschenke</em></h2>
-      <p class="gifts-sub">Eure Anwesenheit ist unser größtes Geschenk.<br>Wenn ihr uns etwas mitbringen möchtet, freuen wir uns über einen Umschlag.</p>
+      <p class="gifts-sub">Eure Anwesenheit an diesem so besonderen Tag ist das Einzige, was wir brauchen.<br>Doch wenn ihr uns dennoch eine kleine Aufmerksamkeit zukommen lassen möchtet,<br>findet ihr unten unsere Bankverbindung.</p>
 
       <div style="margin:52px auto 0;display:flex;flex-direction:column;align-items:center;gap:0;">
         <!-- Sobre interactivo -->
@@ -1251,6 +1280,22 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
         </button>
         <p class="env-tap-hint">Tippe auf den Umschlag</p>
       </div>
+
+      <!-- IBAN -->
+      <div class="iban-block rv">
+        <div class="iban-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="5" width="20" height="14" rx="3"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+            <line x1="6" y1="15" x2="10" y2="15"/>
+            <line x1="13" y1="15" x2="17" y2="15"/>
+          </svg>
+        </div>
+        <div class="iban-label">Bankverbindung</div>
+        <div class="iban-number" id="iban-num" title="Tippe zum Kopieren">DE83 6545 0070 0008 9479 38</div>
+        <div class="iban-copy-hint" id="iban-hint">Tippe zum Kopieren</div>
+      </div>
+
     </div>
   </section>
 
@@ -1423,6 +1468,7 @@ function launchInvitation(){
   heroIn.fromTo('.hero-ornament-top',{opacity:0,y:-20,scale:.9},{opacity:.85,y:0,scale:1,duration:1.2})
     .fromTo('.hero-invitation',{opacity:0,y:10},{opacity:1,y:0,duration:.9},'-=.8')
     .fromTo('.hero-eyebrow',{opacity:0,y:14},{opacity:1,y:0,duration:1},'-=.7')
+    .fromTo('.hero-wir-heiraten',{opacity:0,y:10},{opacity:1,y:0,duration:.8},'-=.5')
     .fromTo(pChars,{opacity:0,y:80,rotateX:-60},{opacity:1,y:0,rotateX:0,duration:1.1,stagger:.035,ease:'power4.out'},'-=.5')
     .fromTo('.hero-and',{opacity:0,scale:.4,rotate:-20},{opacity:1,scale:1,rotate:0,duration:.9,ease:'back.out(1.6)'},'-=.6')
     .fromTo(lChars,{opacity:0,y:80,rotateX:-60},{opacity:1,y:0,rotateX:0,duration:1.1,stagger:.035,ease:'power4.out'},'-=.7')
@@ -1788,6 +1834,23 @@ gsap.fromTo('.gifts-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger
     var isOpen = btn.classList.toggle('open');
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }, {passive:false});
+})();
+
+// ------ IBAN COPY ------
+(function(){
+  var ibanNum = document.getElementById('iban-num');
+  var ibanHint = document.getElementById('iban-hint');
+  if(!ibanNum) return;
+  ibanNum.addEventListener('click', function(){
+    var text = 'DE83654500700008947938';
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(text).then(function(){
+        if(ibanHint){ ibanHint.textContent = '✓ Kopiert!'; setTimeout(function(){ ibanHint.textContent = 'Tippe zum Kopieren'; }, 2000); }
+      });
+    }
+  });
+  gsap.fromTo('.iban-block',{opacity:0,y:24},{opacity:1,y:0,duration:1,ease:'power3.out',
+    scrollTrigger:{trigger:'.iban-block',start:'top 85%'}});
 })();
 
 // ------ RSVP ------
