@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
 <title>Jennifer & Marcel · 15. August 2026 · Biberach</title>
 <meta name="description" content="Jennifer & Marcel · Unsere Hochzeit · Samstag, 15. August 2026 · Biberach, Deutschland">
 
@@ -547,8 +548,15 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
   word-break:break-all;
   cursor:pointer;
   transition:color .25s;
+  -webkit-text-size-adjust:100%;
 }
 .iban-number:hover{color:var(--gold);}
+/* evita que el browser móvil convierta dígitos en links azules */
+.iban-number a,.iban-number span[style]{
+  color:inherit !important;
+  text-decoration:none !important;
+  pointer-events:none !important;
+}
 .iban-copy-hint{font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);opacity:.65;}
 .env-interactive.open~.env-tap-hint{opacity:0;pointer-events:none;}
 @keyframes env-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
