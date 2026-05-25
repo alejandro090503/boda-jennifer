@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Jennifer & Marcel · 15. August 2026">
 <meta name="twitter:image" content="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193379976-5.jpeg">
 
-<link rel="preload" as="image" href="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193536645-1.jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="cabeza.jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Pinyon+Script&family=Italiana&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -810,7 +810,7 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg-wrap">
-      <img class="hero-bg" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/f28c7888-76ee-4b5e-8ab9-e0af8c8e418f/1779193536645-1.jpeg" alt="" fetchpriority="high" loading="eager">
+      <img class="hero-bg" src="cabeza.jpeg" alt="" fetchpriority="high" loading="eager">
     </div>
     <div class="hero-bg-overlay"></div>
     <div class="hero-frame"></div>
@@ -858,9 +858,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
           </g>
         </svg>
         <span class="verse-quote">&ldquo;</span>
-        <p class="verse-text">Und wenn jemand den einen auch überwältigen kann, so werden ihm doch zwei widerstehen; eine dreifache Schnur reißt nicht so bald.</p>
-        <span class="verse-ref">Prediger 4:12</span>
-        <div class="verse-sig">J &amp; M</div>
+        <p class="verse-text">Was als zufällige Begegnung begann, wurde zu einer Reise über Grenzen, Kulturen und Entfernungen hinweg – hin zu einem gemeinsamen Zuhause.</p>
+        <span class="verse-ref">J &amp; M</span>
       </div>
     </div>
   </section>
@@ -1226,6 +1225,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
         <div class="wheel-card"><img src="wa3.jpg" alt="Jennifer y Marcel" loading="lazy"></div>
         <div class="wheel-card"><img src="wa4.jpg" alt="Jennifer y Marcel" loading="lazy"></div>
         <div class="wheel-card"><img src="wa5.jpg" alt="Jennifer y Marcel" loading="lazy"></div>
+        <div class="wheel-card"><img src="wa6.jpg" alt="Jennifer y Marcel" loading="lazy"></div>
+        <div class="wheel-card"><img src="wa7.jpg" alt="Jennifer y Marcel" loading="lazy"></div>
       </div>
     </div>
     <p class="gal-hint">← Ziehe zum Durchblättern →</p>
@@ -1297,20 +1298,6 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
         <p class="env-tap-hint">Tippe auf den Umschlag</p>
       </div>
 
-      <!-- IBAN -->
-      <div class="iban-block rv">
-        <div class="iban-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="2" y="5" width="20" height="14" rx="3"/>
-            <line x1="2" y1="10" x2="22" y2="10"/>
-            <line x1="6" y1="15" x2="10" y2="15"/>
-            <line x1="13" y1="15" x2="17" y2="15"/>
-          </svg>
-        </div>
-        <div class="iban-label">Bankverbindung</div>
-        <div class="iban-number" id="iban-num" title="Tippe zum Kopieren">DE83 6545 0070 0008 9479 38</div>
-        <div class="iban-copy-hint" id="iban-hint">Tippe zum Kopieren</div>
-      </div>
 
     </div>
   </section>
@@ -1731,7 +1718,7 @@ gsap.fromTo('.dress-note--bottom',{opacity:0,y:14},{opacity:1,y:0,duration:1,scr
   if (!ring || cards.length === 0) return;
 
   var n       = cards.length;
-  var radius  = 320;
+  var radius  = 380;
   var rot     = 0;
   var vel     = 0;
   var isDrag  = false;
@@ -1865,8 +1852,6 @@ gsap.fromTo('.gifts-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger
       });
     }
   });
-  gsap.fromTo('.iban-block',{opacity:0,y:24},{opacity:1,y:0,duration:1,ease:'power3.out',
-    scrollTrigger:{trigger:'.iban-block',start:'top 85%'}});
 })();
 
 // ------ RSVP ------
