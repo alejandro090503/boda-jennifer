@@ -849,6 +849,11 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
     <div class="hero-scroll"></div>
   </section>
 
+  <!-- PERSONALIZATION -->
+  <div id="hero-personalization" style="display:none;text-align:center;padding:28px 24px 0;position:relative;z-index:2;">
+    <p id="hero-para-text" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;color:var(--gold-deep);letter-spacing:.02em;line-height:1.6;opacity:.92;"></p>
+  </div>
+
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- VERSÍCULO -->
@@ -1418,10 +1423,18 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Pases count
   if (pasesNumEl) pasesNumEl.textContent = urlPases;
 
-  // Personalization note
+  // Personalization note (RSVP section)
   if (urlPara && noteEl) {
     noteEl.innerHTML = 'Esta invitación es para <strong>' + urlPara + '</strong> con <strong>' + urlPases + '</strong> ' + (urlPases === 1 ? 'pase' : 'pases');
     noteEl.style.display = '';
+  }
+
+  // Personalization banner (above seam, below hero)
+  var heroParaEl  = document.getElementById('hero-para-text');
+  var heroPersoEl = document.getElementById('hero-personalization');
+  if (urlPara && heroParaEl && heroPersoEl) {
+    heroParaEl.textContent = 'Diese Einladung gilt für ' + urlPara + ' mit ' + urlPases + (urlPases === 1 ? ' Platz' : ' Plätzen');
+    heroPersoEl.style.display = '';
   }
 
   // Render name inputs
