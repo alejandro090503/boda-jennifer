@@ -1337,14 +1337,14 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
           </div>
 
           <div class="rsvp-toggle">
-            <button class="rsvp-toggle-btn" id="btnYes" type="button">¡Asistiré!</button>
-            <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+            <button class="rsvp-toggle-btn" id="btnYes" type="button">Ich komme gerne!</button>
+            <button class="rsvp-toggle-btn" id="btnNo" type="button">Ich kann leider nicht</button>
           </div>
 
           <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
 
           <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
-            <span id="rsvp-btn-text">Confirmar</span>
+            <span id="rsvp-btn-text">Bestätigen</span>
           </button>
 
           <p id="rsvp-feedback"></p>
@@ -1485,7 +1485,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
         var inv = d.invitado;
         if (inv.estado === 'confirmado') {
           selectRsvp('yes');
-          if (btnText) btnText.textContent = 'Actualizar respuesta';
+          if (btnText) btnText.textContent = 'Antwort aktualisieren';
           var prev = inv.nombres_confirmados || [];
           if (prev.length > 0 && fieldsEl) {
             var inputs = fieldsEl.querySelectorAll('input');
@@ -1493,7 +1493,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
           }
         } else if (inv.estado === 'declino') {
           selectRsvp('no');
-          if (btnText) btnText.textContent = 'Actualizar respuesta';
+          if (btnText) btnText.textContent = 'Antwort aktualisieren';
         }
       }).catch(function(){});
   }
@@ -1503,7 +1503,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (btnYes) { btnYes.disabled = true; }
     if (btnNo)  { btnNo.disabled  = true; }
     if (confirmBtn) { confirmBtn.disabled = true; }
-    if (btnText) btnText.textContent = 'Plazo cerrado';
+    if (btnText) btnText.textContent = 'Frist abgelaufen';
     return;
   }
 
@@ -1514,7 +1514,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     confirmBtn.addEventListener('click', function(){
       if (!rsvpChoice) {
         if (feedbackEl) {
-          feedbackEl.textContent = 'Por favor selecciona si asistirás.';
+          feedbackEl.textContent = 'Bitte wähle aus, ob du kommst.';
           feedbackEl.style.display = '';
           feedbackEl.style.color = 'var(--gold-deep)';
         }
@@ -1529,14 +1529,14 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
       var nombre = urlPara || (nombres[0] || '');
       if (!nombre) {
         if (feedbackEl) {
-          feedbackEl.textContent = 'Por favor ingresa tu nombre.';
+          feedbackEl.textContent = 'Bitte gib deinen Namen ein.';
           feedbackEl.style.display = '';
           feedbackEl.style.color = 'var(--gold-deep)';
         }
         return;
       }
       confirmBtn.disabled = true;
-      if (btnText) btnText.textContent = 'Enviando…';
+      if (btnText) btnText.textContent = 'Wird gesendet…';
       fetch(PANEL_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1551,22 +1551,22 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
       .then(function(r){ return r.json(); })
       .then(function(){
         confirmBtn.disabled = false;
-        if (btnText) btnText.textContent = 'Actualizar respuesta';
+        if (btnText) btnText.textContent = 'Antwort aktualisieren';
         if (feedbackEl) {
           feedbackEl.style.display = '';
           feedbackEl.style.color = rsvpChoice === 'yes' ? '#2F5A28' : 'var(--gold-deep)';
           feedbackEl.textContent = rsvpChoice === 'yes'
-            ? '¡Gracias! Tu confirmación fue recibida. ✦'
-            : 'Respuesta registrada. ¡Gracias por avisarnos!';
+            ? 'Danke! Deine Zusage wurde erhalten. ✦'
+            : 'Antwort gespeichert. Danke für deine Rückmeldung!';
         }
       })
       .catch(function(){
         confirmBtn.disabled = false;
-        if (btnText) btnText.textContent = 'Confirmar';
+        if (btnText) btnText.textContent = 'Bestätigen';
         if (feedbackEl) {
           feedbackEl.style.display = '';
           feedbackEl.style.color = '#B85042';
-          feedbackEl.textContent = 'Error de conexión. Intenta de nuevo.';
+          feedbackEl.textContent = 'Verbindungsfehler. Bitte versuche es erneut.';
         }
       });
     });
