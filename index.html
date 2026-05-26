@@ -1435,7 +1435,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
       var inp = document.createElement('input');
       inp.className = 'rsvp-input';
       inp.type = 'text';
-      inp.placeholder = i === 0 ? (urlPara || 'Tu nombre completo') : 'Nombre acompañante ' + (i + 1);
+      inp.placeholder = 'Gast ' + (i + 1);
       inp.autocomplete = 'off';
       fieldsEl.appendChild(inp);
     }
