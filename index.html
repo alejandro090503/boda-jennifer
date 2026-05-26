@@ -849,12 +849,6 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
     <div class="hero-scroll"></div>
   </section>
 
-  <!-- PERSONALIZATION -->
-  <div id="hero-personalization" style="display:none;text-align:center;padding:44px 24px 0;position:relative;z-index:2;">
-    <p id="hero-para-name" style="font-family:'Pinyon Script',cursive;font-size:clamp(32px,8vw,48px);color:var(--gold-deep);line-height:1.2;margin-bottom:6px;"></p>
-    <p id="hero-para-pases" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:.18em;color:var(--ink-soft);opacity:.8;text-transform:uppercase;"></p>
-  </div>
-
   <div class="seam" style="--from:transparent;--to:var(--surface);height:40px" aria-hidden="true"></div>
 
   <!-- VERSÍCULO -->
@@ -1325,6 +1319,8 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
           <h2 class="rsvp-title">Deine Anwesenheit <em>bedeutet</em> alles</h2>
           <p class="rsvp-text">Bitte bestätige uns deine Teilnahme bis zum <strong>4. August 2026</strong>. Wir freuen uns darauf zu wissen, dass du dabei sein wirst.</p>
 
+          <p id="rsvp-name-display" style="display:none;font-family:'Pinyon Script',cursive;font-size:clamp(30px,7vw,44px);color:var(--gold-deep);line-height:1.2;margin:18px auto 4px;"></p>
+
           <div class="rsvp-divider">
             <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
           </div>
@@ -1424,20 +1420,11 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // Pases count
   if (pasesNumEl) pasesNumEl.textContent = urlPases;
 
-  // Personalization note (RSVP section)
-  if (urlPara && noteEl) {
-    noteEl.innerHTML = 'Esta invitación es para <strong>' + urlPara + '</strong> con <strong>' + urlPases + '</strong> ' + (urlPases === 1 ? 'pase' : 'pases');
-    noteEl.style.display = '';
-  }
-
-  // Personalization banner (below hero)
-  var heroNameEl  = document.getElementById('hero-para-name');
-  var heroPasesEl = document.getElementById('hero-para-pases');
-  var heroPersoEl = document.getElementById('hero-personalization');
-  if (urlPara && heroPersoEl) {
-    if (heroNameEl)  heroNameEl.textContent  = urlPara;
-    if (heroPasesEl) heroPasesEl.textContent = urlPases + (urlPases === 1 ? ' Platz' : ' Plätze');
-    heroPersoEl.style.display = '';
+  // Nombre en sección RSVP
+  var rsvpNameEl = document.getElementById('rsvp-name-display');
+  if (urlPara && rsvpNameEl) {
+    rsvpNameEl.textContent = urlPara;
+    rsvpNameEl.style.display = '';
   }
 
   // Render name inputs
