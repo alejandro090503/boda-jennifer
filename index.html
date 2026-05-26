@@ -850,8 +850,9 @@ footer{background:linear-gradient(160deg,#deeeff 0%,#e8f0ff 35%,#f0eeff 65%,#fee
   </section>
 
   <!-- PERSONALIZATION -->
-  <div id="hero-personalization" style="display:none;text-align:center;padding:28px 24px 0;position:relative;z-index:2;">
-    <p id="hero-para-text" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;color:var(--gold-deep);letter-spacing:.02em;line-height:1.6;opacity:.92;"></p>
+  <div id="hero-personalization" style="display:none;text-align:center;padding:64px 24px 8px;position:relative;z-index:2;">
+    <p id="hero-para-name" style="font-family:'Pinyon Script',cursive;font-size:clamp(32px,8vw,48px);color:var(--gold-deep);line-height:1.2;margin-bottom:6px;"></p>
+    <p id="hero-para-pases" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;letter-spacing:.18em;color:var(--ink-soft);opacity:.8;text-transform:uppercase;"></p>
   </div>
 
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
@@ -1429,11 +1430,13 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     noteEl.style.display = '';
   }
 
-  // Personalization banner (above seam, below hero)
-  var heroParaEl  = document.getElementById('hero-para-text');
+  // Personalization banner (below hero)
+  var heroNameEl  = document.getElementById('hero-para-name');
+  var heroPasesEl = document.getElementById('hero-para-pases');
   var heroPersoEl = document.getElementById('hero-personalization');
-  if (urlPara && heroParaEl && heroPersoEl) {
-    heroParaEl.textContent = 'Diese Einladung gilt für ' + urlPara + ' mit ' + urlPases + (urlPases === 1 ? ' Platz' : ' Plätzen');
+  if (urlPara && heroPersoEl) {
+    if (heroNameEl)  heroNameEl.textContent  = urlPara;
+    if (heroPasesEl) heroPasesEl.textContent = urlPases + (urlPases === 1 ? ' Platz' : ' Plätze');
     heroPersoEl.style.display = '';
   }
 
