@@ -614,6 +614,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 }
 .rsvp-input:focus{border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(201,160,68,.15);background:rgba(255,255,255,.96);}
 .rsvp-input::placeholder{color:var(--ink-soft);opacity:.6;font-weight:400}
+.rsvp-input:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px;border-color:var(--gold-deep);}
 .rsvp-btn{
   display:flex;align-items:center;justify-content:center;gap:12px;
   width:100%;max-width:420px;margin:0 auto;
@@ -638,6 +639,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .rsvp-toggle{display:flex;gap:10px;max-width:420px;margin:0 auto 20px;}
 .rsvp-toggle-btn{flex:1;padding:14px 8px;border:1.5px solid rgba(201,160,68,.28);background:rgba(255,255,255,.6);cursor:pointer;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink);border-radius:8px;transition:all .25s;}
 .rsvp-toggle-btn:disabled{opacity:.45;cursor:not-allowed;}
+.rsvp-toggle-btn:focus-visible,.rsvp-btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
 .rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(107,155,100,.14);border-color:#4a7848;color:#2F5A28;}
 .rsvp-toggle-btn.rsvp-toggle-selected-no{background:rgba(138,97,32,.09);border-color:var(--gold-deep);color:var(--gold-deep);}
 #rsvp-pases-note{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);text-align:center;margin:0 auto 20px;max-width:420px;display:none;}
@@ -1535,8 +1537,9 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
           nombres_confirmados: rsvpChoice === 'yes' ? nombres : []
         })
       })
-      .then(function(r){ return r.json(); })
-      .then(function(){
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(resp){
+        if (resp && resp.error) throw new Error(resp.error);
         confirmBtn.disabled = false;
         if (btnText) btnText.textContent = 'Antwort aktualisieren';
         if (feedbackEl) {
@@ -1553,7 +1556,7 @@ const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (feedbackEl) {
           feedbackEl.style.display = '';
           feedbackEl.style.color = '#B85042';
-          feedbackEl.textContent = 'Verbindungsfehler. Bitte versuche es erneut.';
+          feedbackEl.textContent = 'Wir konnten deine Antwort nicht speichern. Bitte prüfe deine Verbindung und versuche es erneut.';
         }
       });
     });
@@ -2087,6 +2090,34 @@ if(musicBtn){
 })();
 
 window.addEventListener('resize',()=>ScrollTrigger.refresh());
+</script>
+<script>
+/* ELYSIUM AUDIO UNLOCK v1 — la musica se estrena DENTRO del primer gesto real del invitado.
+   iOS/Chrome retiran el permiso del gesto a los pocos ms, asi que un play() que corre al
+   terminar el video del sobre llega tarde y es rechazado en silencio. */
+(function(){
+  if(window.__elyAudioUnlock) return; window.__elyAudioUnlock=1;
+  var done=false, tries=0;
+  function A(){ return document.querySelector('audio'); }
+  function unlock(){
+    if(done) return;
+    var a=A(); if(!a) return;
+    try{ if(a.preload==='none'){ a.preload='auto'; a.load(); } }catch(e){}
+    if(!a.paused){ done=true; return; }
+    var p;
+    try{ p=a.play(); }catch(e){ return; }
+    if(p && p.then){ p.then(function(){ done=true; }).catch(function(){}); }
+    else { done=true; }
+  }
+  ['pointerdown','touchstart','touchend','click','keydown'].forEach(function(ev){
+    document.addEventListener(ev, unlock, {capture:true, passive:true});
+  });
+  var iv=setInterval(function(){
+    var a=A();
+    if(done || (a && !a.paused)){ done=true; clearInterval(iv); return; }
+    if(++tries>120) clearInterval(iv);
+  },1000);
+})();
 </script>
 </body>
 </html>
